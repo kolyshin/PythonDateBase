@@ -1,0 +1,5 @@
+SELECT  count(services.name) as Услуга, sum(services.price) as Цена
+FROM customer 
+LEFT JOIN zakaz ON zakaz.id_customer = customer.id
+LEFT JOIN avto ON customer.id_avto = avto.id
+LEFT JOIN services ON zakaz.id_servies = services.id

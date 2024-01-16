@@ -1,0 +1,6 @@
+SELECT customer.name as Имя, customer.surname as Фамилия, avto.marka as Марка, avto.model as Модель, services.name as Услуга, services.price as Цена
+FROM customer 
+LEFT JOIN zakaz ON zakaz.id_customer = customer.id
+LEFT JOIN avto ON customer.id_avto = avto.id
+LEFT JOIN services ON zakaz.id_servies = services.id
+Where services.name = "Покраска детали"
